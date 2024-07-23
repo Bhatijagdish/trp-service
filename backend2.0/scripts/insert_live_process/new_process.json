@@ -1,0 +1,298 @@
+{
+    "inherits_process_id": null,
+    "process_settings": {
+        "send_method": "PUT",
+        "inherit": false
+    },
+    "data_sources": [
+        {
+            "repeatable": false,
+            "inherit": null,
+            "custom_name": null,
+            "source": {
+                "type_source": "GetConnector",
+                "csv_file": null,
+                "get_connector": {
+                    "name": "DemoData_Salarisopging_Nieuw_Jaar"
+                }
+            },
+            "filter_source": null,
+            "field_filter_rows": []
+        }
+    ],
+    "connectors": [
+        {
+            "name": "AfasEmployee",
+            "hierarchy": "AfasEmployee",
+            "connector_settings": {
+                "rows_function": "bron_percentage",
+                "inherit": false,
+                "row_function_parameters": [
+                    {
+                        "name": "bron",
+                        "input": "DemoData_Salarisopging_Nieuw_Jaar"
+                    },
+                    {
+                        "name": "bron_percentage",
+                        "input": "100"
+                    }
+                ]
+            },
+            "fields": [
+                {
+                    "field_code": "GUID",
+                    "inherit": false,
+                    "functions": [
+                        {
+                            "method_id": 14,
+                            "order_id": 0,
+                            "parameters": [
+                                {
+                                    "name": "get_connector",
+                                    "input": "DemoData_Salarisopging_Nieuw_Jaar"
+                                },
+                                {
+                                    "name": "get_connector_field",
+                                    "input": "GUID_2"
+                                }
+                            ]
+                        }
+                    ],
+                    "custom_row_values": []
+                },
+                {
+                    "field_code": "EmId",
+                    "inherit": false,
+                    "functions": [
+                        {
+                            "method_id": 14,
+                            "order_id": 0,
+                            "parameters": [
+                                {
+                                    "name": "get_connector",
+                                    "input": "DemoData_Salarisopging_Nieuw_Jaar"
+                                },
+                                {
+                                    "name": "get_connector_field",
+                                    "input": "Medewerker"
+                                }
+                            ]
+                        }
+                    ],
+                    "custom_row_values": []
+                }
+            ]
+        },
+        {
+            "name": "AfasSalary",
+            "hierarchy": "AfasEmployee -> AfasSalary",
+            "connector_settings": {
+                "rows_function": "random_waarde",
+                "inherit": false,
+                "row_function_parameters": [
+                    {
+                        "name": "minimale_waarde",
+                        "input": "1"
+                    },
+                    {
+                        "name": "maximale_waarde",
+                        "input": "1"
+                    }
+                ]
+            },
+            "fields": [
+                {
+                    "field_code": "DaBe",
+                    "inherit": false,
+                    "functions": [
+                        {
+                            "method_id": 14,
+                            "order_id": 0,
+                            "parameters": [
+                                {
+                                    "name": "get_connector",
+                                    "input": "DemoData_Salarisopging_Nieuw_Jaar"
+                                },
+                                {
+                                    "name": "get_connector_field",
+                                    "input": "Begindatum_salaris"
+                                }
+                            ]
+                        }
+                    ],
+                    "custom_row_values": []
+                },
+                {
+                    "field_code": "GUID",
+                    "inherit": false,
+                    "functions": [
+                        {
+                            "method_id": 19,
+                            "order_id": 0,
+                            "parameters": [
+                                {
+                                    "name": "get_connector",
+                                    "input": "DemoData_Salarisopging_Nieuw_Jaar"
+                                },
+                                {
+                                    "name": "get_connector_field",
+                                    "input": "GUID"
+                                },
+                                {
+                                    "name": "fixed_get_connector_field",
+                                    "input": "GUID_2"
+                                },
+                                {
+                                    "name": "fixed_value_function",
+                                    "input": "Veld waarde"
+                                },
+                                {
+                                    "name": "fixed_value",
+                                    "input": "AfasEmployee##GUID"
+                                }
+                            ]
+                        }
+                    ],
+                    "custom_row_values": []
+                },
+                {
+                    "field_code": "SaYe",
+                    "inherit": false,
+                    "functions": [
+                        {
+                            "method_id": 19,
+                            "order_id": 0,
+                            "parameters": [
+                                {
+                                    "name": "get_connector",
+                                    "input": "DemoData_Salarisopging_Nieuw_Jaar"
+                                },
+                                {
+                                    "name": "get_connector_field",
+                                    "input": "Jaarloon_BT"
+                                },
+                                {
+                                    "name": "fixed_get_connector_field",
+                                    "input": "GUID_2"
+                                },
+                                {
+                                    "name": "fixed_value_function",
+                                    "input": "Veld waarde"
+                                },
+                                {
+                                    "name": "fixed_value",
+                                    "input": "AfasEmployee##GUID"
+                                }
+                            ]
+                        }
+                    ],
+                    "custom_row_values": []
+                },
+                {
+                    "field_code": "EmSa",
+                    "inherit": false,
+                    "functions": [
+                        {
+                            "method_id": 7,
+                            "order_id": 0,
+                            "parameters": [
+                                {
+                                    "name": "eerste_waarde",
+                                    "input": "1"
+                                },
+                                {
+                                    "name": "tweede_waarde",
+                                    "input": "2"
+                                },
+                                {
+                                    "name": "aantal_decimalen",
+                                    "input": "3"
+                                }
+                            ]
+                        },
+                        {
+                            "method_id": 19,
+                            "order_id": 1,
+                            "parameters": [
+                                {
+                                    "name": "get_connector",
+                                    "input": "DemoData_Salarisopging_Nieuw_Jaar"
+                                },
+                                {
+                                    "name": "get_connector_field",
+                                    "input": "Salaris"
+                                },
+                                {
+                                    "name": "fixed_get_connector_field",
+                                    "input": "GUID_2"
+                                },
+                                {
+                                    "name": "fixed_value_function",
+                                    "input": "Veld waarde"
+                                },
+                                {
+                                    "name": "fixed_value",
+                                    "input": "AfasEmployee##GUID"
+                                }
+                            ]
+                        },
+                        {
+                            "method_id": 3,
+                            "order_id": 2,
+                            "parameters": [
+                                {
+                                    "name": "waarde",
+                                    "input": "$perc_verhoging"
+                                }
+                            ]
+                        },
+                        {
+                            "method_id": 3,
+                            "order_id": 3,
+                            "parameters": [
+                                {
+                                    "name": "waarde",
+                                    "input": "2"
+                                }
+                            ]
+                        }
+                    ],
+                    "custom_row_values": []
+                },
+                {
+                    "field_code": "SaPe",
+                    "inherit": false,
+                    "functions": [
+                        {
+                            "method_id": 19,
+                            "order_id": 0,
+                            "parameters": [
+                                {
+                                    "name": "get_connector",
+                                    "input": "DemoData_Salarisopging_Nieuw_Jaar"
+                                },
+                                {
+                                    "name": "get_connector_field",
+                                    "input": "Soort_salaris"
+                                },
+                                {
+                                    "name": "fixed_get_connector_field",
+                                    "input": "GUID_2"
+                                },
+                                {
+                                    "name": "fixed_value_function",
+                                    "input": "Veld waarde"
+                                },
+                                {
+                                    "name": "fixed_value",
+                                    "input": "AfasEmployee##GUID"
+                                }
+                            ]
+                        }
+                    ],
+                    "custom_row_values": []
+                }
+            ]
+        }
+    ]
+}

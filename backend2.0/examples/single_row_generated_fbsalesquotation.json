@@ -1,0 +1,65 @@
+{
+  "FbSalesQuotation": {
+    "Element": {
+      "Fields": {
+        "DbId": "10000",
+        "OrDa": "2021-10-21",
+        "Unit": "1"
+      },
+      "Objects": [
+        {
+          "FbSalesQuotationLines": {
+            "Element": [
+              {
+                "Fields": {
+                  "VaIt": "1",
+                  "ItCd": "15112",
+                  "QuUn": "5",
+                  "Upri": "177.99"
+                },
+                "Objects": [
+                  {
+                    "AfasFbOrderCompLines": {
+                      "Element": [
+                        {
+                          "Fields": {
+                            "ItCd": "4000",
+                            "VaIt": "2"
+                          },
+                          "Objects": []
+                        }
+                      ]
+                    }
+                  }
+                ]
+              },
+              {
+                "Fields": {
+                  "VaIt": "1",
+                  "ItCd": "15112",
+                  "QuUn": "5",
+                  "Upri": "177.99"
+                },
+                "Objects": [
+                  {
+                    "AfasFbOrderCompLines": {
+                      "Element": [
+                        {
+                          "Fields": {
+                            "ItCd": "4000",
+                            "VaIt": "2"
+                          },
+                          "Objects": []
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

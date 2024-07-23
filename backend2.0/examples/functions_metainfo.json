@@ -1,0 +1,548 @@
+{
+  "functions": [
+    {
+      "name": "extra_dagen_optellen",
+      "return_data_types": [],
+      "method_id": 1,
+      "label": "Extra dagen optellen",
+      "horizontal_parameters": false,
+      "parameters": [
+        {
+          "name": "originele_datum",
+          "data_types": [],
+          "label": null,
+          "optional": false,
+          "default_value": null,
+          "allow_child_functions": true,
+          "values": []
+        },
+        {
+          "name": "extra_dagen",
+          "data_types": [],
+          "label": null,
+          "optional": false,
+          "default_value": null,
+          "allow_child_functions": true,
+          "values": []
+        },
+        {
+          "name": "weekend_dagen_meenemen",
+          "data_types": [],
+          "label": null,
+          "optional": false,
+          "default_value": false,
+          "allow_child_functions": true,
+          "values": [
+            {
+              "id": "True",
+              "description": "True"
+            },
+            {
+              "id": "False",
+              "description": "False"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "tekst_samenvoegen",
+      "return_data_types": [],
+      "method_id": 2,
+      "label": "Tekst samenvoegen",
+      "horizontal_parameters": false,
+      "parameters": [
+        {
+          "name": "eerste_waarde",
+          "data_types": [],
+          "label": null,
+          "optional": true,
+          "default_value": null,
+          "allow_child_functions": true,
+          "values": []
+        },
+        {
+          "name": "tweede_waarde",
+          "data_types": [],
+          "label": null,
+          "optional": true,
+          "default_value": null,
+          "allow_child_functions": true,
+          "values": []
+        },
+        {
+          "name": "derde_waarde",
+          "data_types": [],
+          "label": null,
+          "optional": true,
+          "default_value": null,
+          "allow_child_functions": true,
+          "values": []
+        },
+        {
+          "name": "vierde_waarde",
+          "data_types": [],
+          "label": null,
+          "optional": true,
+          "default_value": null,
+          "allow_child_functions": true,
+          "values": []
+        },
+        {
+          "name": "vijfde_waarde",
+          "data_types": [],
+          "label": null,
+          "optional": true,
+          "default_value": null,
+          "allow_child_functions": true,
+          "values": []
+        }
+      ]
+    },
+    {
+      "name": "vaste_waarde",
+      "return_data_types": [],
+      "method_id": 3,
+      "label": "Vaste waarde",
+      "horizontal_parameters": false,
+      "parameters": [
+        {
+          "name": "waarde",
+          "data_types": [],
+          "label": null,
+          "optional": false,
+          "default_value": null,
+          "allow_child_functions": false,
+          "values": []
+        }
+      ]
+    },
+    {
+      "name": "waardes_delen",
+      "return_data_types": [],
+      "method_id": 4,
+      "label": "Waardes delen",
+      "horizontal_parameters": false,
+      "parameters": [
+        {
+          "name": "eerste_waarde",
+          "data_types": [],
+          "label": null,
+          "optional": false,
+          "default_value": null,
+          "allow_child_functions": true,
+          "values": []
+        },
+        {
+          "name": "tweede_waarde",
+          "data_types": [],
+          "label": null,
+          "optional": false,
+          "default_value": null,
+          "allow_child_functions": true,
+          "values": []
+        },
+        {
+          "name": "aantal_decimalen",
+          "data_types": [],
+          "label": null,
+          "optional": false,
+          "default_value": 0,
+          "allow_child_functions": true,
+          "values": []
+        }
+      ]
+    },
+    {
+      "name": "veld_waarde",
+      "return_data_types": [],
+      "method_id": 5,
+      "label": "Veld waarde",
+      "horizontal_parameters": true,
+      "parameters": [
+        {
+          "name": "connector",
+          "data_types": [],
+          "label": null,
+          "optional": false,
+          "default_value": null,
+          "allow_child_functions": false,
+          "values": []
+        },
+        {
+          "name": "field_id",
+          "data_types": [],
+          "label": null,
+          "optional": false,
+          "default_value": null,
+          "allow_child_functions": false,
+          "values": []
+        }
+      ]
+    },
+    {
+      "name": "als_dan",
+      "return_data_types": [],
+      "method_id": 6,
+      "label": "Als dan",
+      "horizontal_parameters": false,
+      "parameters": [
+        {
+          "name": "waarde_genereren",
+          "data_types": [],
+          "label": null,
+          "optional": false,
+          "default_value": null,
+          "allow_child_functions": true,
+          "values": []
+        },
+        {
+          "name": "operator",
+          "data_types": [],
+          "label": null,
+          "optional": false,
+          "default_value": null,
+          "allow_child_functions": false,
+          "values": [
+            {
+              "id": "Gelijk aan",
+              "description": "="
+            },
+            {
+              "id": "Ongelijk aan",
+              "description": "!="
+            },
+            {
+              "id": "Kleiner dan",
+              "description": "<"
+            },
+            {
+              "id": "Kleiner dan of gelijk aan",
+              "description": "<="
+            },
+            {
+              "id": "Groter dan",
+              "description": ">"
+            },
+            {
+              "id": "Groter dan of gelijk aan",
+              "description": ">="
+            }
+          ]
+        },
+        {
+          "name": "als_waarde",
+          "data_types": [],
+          "label": null,
+          "optional": false,
+          "default_value": null,
+          "allow_child_functions": true,
+          "values": []
+        },
+        {
+          "name": "dan_waarde",
+          "data_types": [],
+          "label": null,
+          "optional": false,
+          "default_value": null,
+          "allow_child_functions": true,
+          "values": []
+        },
+        {
+          "name": "anders",
+          "data_types": [],
+          "label": null,
+          "optional": false,
+          "default_value": null,
+          "allow_child_functions": true,
+          "values": []
+        }
+      ]
+    },
+    {
+      "name": "waardes_vermenigvuldigen",
+      "return_data_types": [],
+      "method_id": 7,
+      "label": "Waardes vermenigvuldigen",
+      "horizontal_parameters": false,
+      "parameters": [
+        {
+          "name": "eerste_waarde",
+          "data_types": [],
+          "label": null,
+          "optional": false,
+          "default_value": null,
+          "allow_child_functions": true,
+          "values": []
+        },
+        {
+          "name": "tweede_waarde",
+          "data_types": [],
+          "label": null,
+          "optional": false,
+          "default_value": null,
+          "allow_child_functions": true,
+          "values": []
+        },
+        {
+          "name": "aantal_decimalen",
+          "data_types": [],
+          "label": null,
+          "optional": false,
+          "default_value": 0,
+          "allow_child_functions": true,
+          "values": []
+        }
+      ]
+    },
+    {
+      "name": "random_bsn",
+      "return_data_types": [],
+      "method_id": 8,
+      "label": "Random bsn",
+      "horizontal_parameters": false,
+      "parameters": []
+    },
+    {
+      "name": "random_boolean",
+      "return_data_types": [],
+      "method_id": 9,
+      "label": "Random boolean",
+      "horizontal_parameters": false,
+      "parameters": []
+    },
+    {
+      "name": "genereer_random_datum",
+      "return_data_types": [],
+      "method_id": 10,
+      "label": "Genereer random datum",
+      "horizontal_parameters": false,
+      "parameters": [
+        {
+          "name": "begin_datum",
+          "data_types": [],
+          "label": null,
+          "optional": false,
+          "default_value": null,
+          "allow_child_functions": true,
+          "values": []
+        },
+        {
+          "name": "eind_datum",
+          "data_types": [],
+          "label": null,
+          "optional": false,
+          "default_value": null,
+          "allow_child_functions": true,
+          "values": []
+        },
+        {
+          "name": "weekend_dagen_meenemen",
+          "data_types": [],
+          "label": null,
+          "optional": false,
+          "default_value": false,
+          "allow_child_functions": true,
+          "values": [
+            {
+              "id": "True",
+              "description": "True"
+            },
+            {
+              "id": "False",
+              "description": "False"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "random_decimaal_getal",
+      "return_data_types": [],
+      "method_id": 11,
+      "label": "Random decimaal getal",
+      "horizontal_parameters": false,
+      "parameters": [
+        {
+          "name": "minimale_waarde",
+          "data_types": [],
+          "label": null,
+          "optional": false,
+          "default_value": null,
+          "allow_child_functions": true,
+          "values": []
+        },
+        {
+          "name": "maximale_waarde",
+          "data_types": [],
+          "label": null,
+          "optional": false,
+          "default_value": null,
+          "allow_child_functions": true,
+          "values": []
+        },
+        {
+          "name": "aantal_decimalen",
+          "data_types": [],
+          "label": null,
+          "optional": false,
+          "default_value": 0,
+          "allow_child_functions": true,
+          "values": []
+        }
+      ]
+    },
+    {
+      "name": "random_getal",
+      "return_data_types": [],
+      "method_id": 12,
+      "label": "Random getal",
+      "horizontal_parameters": false,
+      "parameters": [
+        {
+          "name": "minimale_waarde",
+          "data_types": [],
+          "label": null,
+          "optional": false,
+          "default_value": null,
+          "allow_child_functions": true,
+          "values": []
+        },
+        {
+          "name": "maximale_waarde",
+          "data_types": [],
+          "label": null,
+          "optional": false,
+          "default_value": null,
+          "allow_child_functions": true,
+          "values": []
+        },
+        {
+          "name": "aantal_decimalen",
+          "data_types": [],
+          "label": null,
+          "optional": false,
+          "default_value": 0,
+          "allow_child_functions": true,
+          "values": []
+        },
+        {
+          "name": "stapgrootte",
+          "data_types": [],
+          "label": null,
+          "optional": false,
+          "default_value": 1,
+          "allow_child_functions": true,
+          "values": []
+        }
+      ]
+    },
+    {
+      "name": "random_selectie",
+      "return_data_types": [],
+      "method_id": 13,
+      "label": "Random selectie",
+      "horizontal_parameters": false,
+      "parameters": []
+    },
+    {
+      "name": "bron_waarde",
+      "return_data_types": [],
+      "method_id": 14,
+      "label": "Bron waarde",
+      "horizontal_parameters": true,
+      "parameters": [
+        {
+          "name": "get_connector",
+          "data_types": [],
+          "label": null,
+          "optional": false,
+          "default_value": null,
+          "allow_child_functions": false,
+          "values": []
+        },
+        {
+          "name": "get_connector_field",
+          "data_types": [],
+          "label": null,
+          "optional": false,
+          "default_value": null,
+          "allow_child_functions": false,
+          "values": []
+        }
+      ]
+    },
+    {
+      "name": "waardes_aftrekken",
+      "return_data_types": [],
+      "method_id": 15,
+      "label": "Waardes aftrekken",
+      "horizontal_parameters": false,
+      "parameters": [
+        {
+          "name": "eerste_waarde",
+          "data_types": [],
+          "label": null,
+          "optional": false,
+          "default_value": null,
+          "allow_child_functions": true,
+          "values": []
+        },
+        {
+          "name": "tweede_waarde",
+          "data_types": [],
+          "label": null,
+          "optional": false,
+          "default_value": null,
+          "allow_child_functions": true,
+          "values": []
+        },
+        {
+          "name": "aantal_decimalen",
+          "data_types": [],
+          "label": null,
+          "optional": false,
+          "default_value": 0,
+          "allow_child_functions": true,
+          "values": []
+        }
+      ]
+    },
+    {
+      "name": "waardes_optellen",
+      "return_data_types": [],
+      "method_id": 16,
+      "label": "Waardes optellen",
+      "horizontal_parameters": false,
+      "parameters": [
+        {
+          "name": "eerste_waarde",
+          "data_types": [],
+          "label": null,
+          "optional": false,
+          "default_value": null,
+          "allow_child_functions": true,
+          "values": []
+        },
+        {
+          "name": "tweede_waarde",
+          "data_types": [],
+          "label": null,
+          "optional": false,
+          "default_value": null,
+          "allow_child_functions": true,
+          "values": []
+        },
+        {
+          "name": "aantal_decimalen",
+          "data_types": [],
+          "label": null,
+          "optional": false,
+          "default_value": 0,
+          "allow_child_functions": true,
+          "values": []
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,392 @@
+{
+  "inherits_process_id": null,
+  "process_settings": {
+    "send_method": "POST",
+    "inherit": false
+  },
+  "data_sources": [
+    {
+      "repeatable": true,
+      "inherit": null,
+      "custom_name": null,
+      "source": {
+        "type_source": "GetConnector",
+        "csv_file_id": null,
+        "get_connector": {
+          "name": "DemoData_Actieve_Items"
+        }
+      },
+      "filter_source": null,
+      "field_filter_rows": []
+    },
+    {
+      "repeatable": true,
+      "inherit": null,
+      "custom_name": null,
+      "source": {
+        "type_source": "GetConnector",
+        "csv_file_id": null,
+        "get_connector": {
+          "name": "DemoData_Actieve_Forecasts"
+        }
+      },
+      "filter_source": null,
+      "field_filter_rows": []
+    },
+    {
+      "repeatable": true,
+      "inherit": null,
+      "custom_name": null,
+      "source": {
+        "type_source": "GetConnector",
+        "csv_file_id": null,
+        "get_connector": {
+          "name": "DemoData_Actieve_Medewerkers"
+        }
+      },
+      "filter_source": null,
+      "field_filter_rows": []
+    },
+    {
+      "repeatable": true,
+      "inherit": null,
+      "custom_name": null,
+      "source": {
+        "type_source": "GetConnector",
+        "csv_file_id": null,
+        "get_connector": {
+          "name": "DemoData_Team"
+        }
+      },
+      "filter_source": null,
+      "field_filter_rows": []
+    },
+    {
+      "repeatable": true,
+      "inherit": null,
+      "custom_name": null,
+      "source": {
+        "type_source": "GetConnector",
+        "csv_file_id": null,
+        "get_connector": {
+          "name": "DemoData_Vaste_activa"
+        }
+      },
+      "filter_source": null,
+      "field_filter_rows": []
+    }
+  ],
+  "connectors": [
+    {
+      "name": "AfasEmployee",
+      "hierarchy": "AfasEmployee",
+      "connector_settings": {
+        "rows_function": "random_waarde",
+        "inherit": false,
+        "row_function_parameters": [
+          {
+            "name": "maximale_waarde",
+            "input": "5"
+          },
+          {
+            "name": "minimale_waarde",
+            "input": "4"
+          }
+        ]
+      },
+      "fields": [
+        {
+          "field_code": "DaDe",
+          "inherit": false,
+          "functions": [
+            {
+              "method_id": 14,
+              "order_id": 0,
+              "parameters": [
+                {
+                  "name": "get_connector",
+                  "input": "DemoData_Actieve_Forecasts"
+                },
+                {
+                  "name": "get_connector_field",
+                  "input": "Verwachte_einddatum"
+                }
+              ]
+            }
+          ],
+          "custom_row_values": []
+        },
+        {
+          "field_code": "LwNa",
+          "inherit": false,
+          "functions": [
+            {
+              "method_id": 14,
+              "order_id": 0,
+              "parameters": [
+                {
+                  "name": "get_connector",
+                  "input": "DemoData_Actieve_Medewerkers"
+                },
+                {
+                  "name": "get_connector_field",
+                  "input": "Medewerker_naam"
+                }
+              ]
+            }
+          ],
+          "custom_row_values": []
+        },
+        {
+          "field_code": "EmId",
+          "inherit": false,
+          "functions": [
+            {
+              "method_id": 14,
+              "order_id": 0,
+              "parameters": [
+                {
+                  "name": "get_connector",
+                  "input": "DemoData_Actieve_Items"
+                },
+                {
+                  "name": "get_connector_field",
+                  "input": "Type_item"
+                }
+              ]
+            }
+          ],
+          "custom_row_values": []
+        }
+      ]
+    },
+    {
+      "name": "KnPerson",
+      "hierarchy": "AfasEmployee -> KnPerson",
+      "connector_settings": {
+        "rows_function": "random_waarde",
+        "inherit": false,
+        "row_function_parameters": [
+          {
+            "name": "minimale_waarde",
+            "input": "2"
+          },
+          {
+            "name": "maximale_waarde",
+            "input": "5"
+          }
+        ]
+      },
+      "fields": [
+        {
+          "field_code": "BcCo",
+          "inherit": false,
+          "functions": [
+            {
+              "method_id": 14,
+              "order_id": 0,
+              "parameters": [
+                {
+                  "name": "get_connector",
+                  "input": "DemoData_Actieve_Forecasts"
+                },
+                {
+                  "name": "get_connector_field",
+                  "input": "VerkooprelatieId"
+                }
+              ]
+            }
+          ],
+          "custom_row_values": []
+        },
+        {
+          "field_code": "CaNm",
+          "inherit": false,
+          "functions": [
+            {
+              "method_id": 14,
+              "order_id": 0,
+              "parameters": [
+                {
+                  "name": "get_connector",
+                  "input": "DemoData_Actieve_Medewerkers"
+                },
+                {
+                  "name": "get_connector_field",
+                  "input": "Medewerker_naam"
+                }
+              ]
+            }
+          ],
+          "custom_row_values": []
+        },
+        {
+          "field_code": "MbNr",
+          "inherit": false,
+          "functions": [
+            {
+              "method_id": 14,
+              "order_id": 0,
+              "parameters": [
+                {
+                  "name": "get_connector",
+                  "input": "DemoData_Team"
+                },
+                {
+                  "name": "get_connector_field",
+                  "input": "Naam"
+                }
+              ]
+            }
+          ],
+          "custom_row_values": []
+        }
+      ]
+    },
+    {
+      "name": "KnBankAccount",
+      "hierarchy": "AfasEmployee -> KnPerson -> KnBankAccount",
+      "connector_settings": {
+        "rows_function": "random_waarde",
+        "inherit": false,
+        "row_function_parameters": [
+          {
+            "name": "minimale_waarde",
+            "input": "2"
+          },
+          {
+            "name": "maximale_waarde",
+            "input": "5"
+          }
+        ]
+      },
+      "fields": [
+        {
+          "field_code": "BaAc",
+          "inherit": false,
+          "functions": [
+            {
+              "method_id": 14,
+              "order_id": 0,
+              "parameters": [
+                {
+                  "name": "get_connector",
+                  "input": "DemoData_Vaste_activa"
+                },
+                {
+                  "name": "get_connector_field",
+                  "input": "Aanschafwaarde"
+                }
+              ]
+            }
+          ],
+          "custom_row_values": []
+        },
+        {
+          "field_code": "CoId",
+          "inherit": false,
+          "functions": [
+            {
+              "method_id": 14,
+              "order_id": 0,
+              "parameters": [
+                {
+                  "name": "get_connector",
+                  "input": "DemoData_Team"
+                },
+                {
+                  "name": "get_connector_field",
+                  "input": "Team"
+                }
+              ]
+            }
+          ],
+          "custom_row_values": []
+        },
+        {
+          "field_code": "BkIc",
+          "inherit": false,
+          "functions": [
+            {
+              "method_id": 14,
+              "order_id": 0,
+              "parameters": [
+                {
+                  "name": "get_connector",
+                  "input": "DemoData_Vaste_activa"
+                },
+                {
+                  "name": "get_connector_field",
+                  "input": "Administratie"
+                }
+              ]
+            }
+          ],
+          "custom_row_values": []
+        }
+      ]
+    },
+    {
+      "name": "AfasContract",
+      "hierarchy": "AfasEmployee -> KnPerson -> AfasContract",
+      "connector_settings": {
+        "rows_function": "random_waarde",
+        "inherit": false,
+        "row_function_parameters": [
+          {
+            "name": "maximale_waarde",
+            "input": "3"
+          },
+          {
+            "name": "minimale_waarde",
+            "input": "1"
+          }
+        ]
+      },
+      "fields": [
+        {
+          "field_code": "WcId",
+          "inherit": false,
+          "functions": [
+            {
+              "method_id": 14,
+              "order_id": 0,
+              "parameters": [
+                {
+                  "name": "get_connector",
+                  "input": "DemoData_Actieve_Medewerkers"
+                },
+                {
+                  "name": "get_connector_field",
+                  "input": "Medewerker"
+                }
+              ]
+            }
+          ],
+          "custom_row_values": []
+        },
+        {
+          "field_code": "DaBe",
+          "inherit": false,
+          "functions": [
+            {
+              "method_id": 14,
+              "order_id": 0,
+              "parameters": [
+                {
+                  "name": "get_connector",
+                  "input": "DemoData_Actieve_Forecasts"
+                },
+                {
+                  "name": "get_connector_field",
+                  "input": "Begindatum"
+                }
+              ]
+            }
+          ],
+          "custom_row_values": []
+        }
+      ]
+    }
+  ]
+}

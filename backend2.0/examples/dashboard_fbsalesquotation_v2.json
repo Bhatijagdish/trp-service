@@ -1,0 +1,316 @@
+{
+  "inherits_process_id": null,
+  "process_settings": {
+    "send_method": "POST",
+    "inherit": false
+  },
+  "data_sources": [
+    {
+      "repeatable": true,
+      "inherit": null,
+      "custom_name": null,
+      "source": {
+        "type_source": "GetConnector",
+        "csv_file_id": null,
+        "get_connector": {
+          "name": "DemoData_Crediteuren"
+        }
+      },
+      "filter_source": null,
+      "field_filter_rows": []
+    },
+    {
+      "repeatable": true,
+      "inherit": null,
+      "custom_name": null,
+      "source": {
+        "type_source": "GetConnector",
+        "csv_file_id": null,
+        "get_connector": {
+          "name": "DemoData_Actieve_Medewerkers"
+        }
+      },
+      "filter_source": null,
+      "field_filter_rows": []
+    },
+    {
+      "repeatable": true,
+      "inherit": null,
+      "custom_name": null,
+      "source": {
+        "type_source": "GetConnector",
+        "csv_file_id": null,
+        "get_connector": {
+          "name": "DemoData_Actieve_Items"
+        }
+      },
+      "filter_source": null,
+      "field_filter_rows": []
+    },
+    {
+      "repeatable": true,
+      "inherit": null,
+      "custom_name": null,
+      "source": {
+        "type_source": "GetConnector",
+        "csv_file_id": null,
+        "get_connector": {
+          "name": "DemoData_Actieve_Forecasts"
+        }
+      },
+      "filter_source": null,
+      "field_filter_rows": []
+    }
+  ],
+  "connectors": [
+    {
+      "name": "FbSalesQuotation",
+      "hierarchy": "FbSalesQuotation",
+      "connector_settings": {
+        "rows_function": "random_waarde",
+        "inherit": false,
+        "row_function_parameters": [
+          {
+            "name": "minimale_waarde",
+            "input": "2"
+          },
+          {
+            "name": "maximale_waarde",
+            "input": "5"
+          }
+        ]
+      },
+      "fields": [
+        {
+          "field_code": "OrDa",
+          "inherit": false,
+          "functions": [
+            {
+              "method_id": 14,
+              "order_id": 0,
+              "parameters": [
+                {
+                  "name": "get_connector",
+                  "input": "DemoData_Actieve_Forecasts"
+                },
+                {
+                  "name": "get_connector_field",
+                  "input": "Begindatum"
+                }
+              ]
+            }
+          ],
+          "custom_row_values": []
+        },
+        {
+          "field_code": "DaDe",
+          "inherit": false,
+          "functions": [
+            {
+              "method_id": 14,
+              "order_id": 0,
+              "parameters": [
+                {
+                  "name": "get_connector",
+                  "input": "DemoData_Actieve_Forecasts"
+                },
+                {
+                  "name": "get_connector_field",
+                  "input": "Verwachte_einddatum"
+                }
+              ]
+            }
+          ],
+          "custom_row_values": []
+        },
+        {
+          "field_code": "OrNu",
+          "inherit": false,
+          "functions": [
+            {
+              "method_id": 14,
+              "order_id": 0,
+              "parameters": [
+                {
+                  "name": "get_connector",
+                  "input": "DemoData_Actieve_Items"
+                },
+                {
+                  "name": "get_connector_field",
+                  "input": "Itemcode"
+                }
+              ]
+            }
+          ],
+          "custom_row_values": []
+        },
+        {
+          "field_code": "SaCh",
+          "inherit": false,
+          "functions": [
+            {
+              "method_id": 14,
+              "order_id": 0,
+              "parameters": [
+                {
+                  "name": "get_connector",
+                  "input": "DemoData_Crediteuren"
+                },
+                {
+                  "name": "get_connector_field",
+                  "input": "Crediteurnaam"
+                }
+              ]
+            }
+          ],
+          "custom_row_values": []
+        }
+      ]
+    },
+    {
+      "name": "FbSalesQuotationLines",
+      "hierarchy": "FbSalesQuotation -> FbSalesQuotationLines",
+      "connector_settings": {
+        "rows_function": "random_waarde",
+        "inherit": false,
+        "row_function_parameters": [
+          {
+            "name": "minimale_waarde",
+            "input": "2"
+          },
+          {
+            "name": "maximale_waarde",
+            "input": "4"
+          }
+        ]
+      },
+      "fields": [
+        {
+          "field_code": "ItCd",
+          "inherit": false,
+          "functions": [
+            {
+              "method_id": 14,
+              "order_id": 0,
+              "parameters": [
+                {
+                  "name": "get_connector",
+                  "input": "DemoData_Actieve_Medewerkers"
+                },
+                {
+                  "name": "get_connector_field",
+                  "input": "Medewerker_naam"
+                }
+              ]
+            }
+          ],
+          "custom_row_values": []
+        },
+        {
+          "field_code": "BiUn",
+          "inherit": false,
+          "functions": [
+            {
+              "method_id": 14,
+              "order_id": 0,
+              "parameters": [
+                {
+                  "name": "get_connector",
+                  "input": "DemoData_Actieve_Items"
+                },
+                {
+                  "name": "get_connector_field",
+                  "input": "Basiseenheid"
+                }
+              ]
+            }
+          ],
+          "custom_row_values": []
+        },
+        {
+          "field_code": "QuLe",
+          "inherit": false,
+          "functions": [
+            {
+              "method_id": 14,
+              "order_id": 0,
+              "parameters": [
+                {
+                  "name": "get_connector",
+                  "input": "DemoData_Crediteuren"
+                },
+                {
+                  "name": "get_connector_field",
+                  "input": "Nummer_crediteur"
+                }
+              ]
+            }
+          ],
+          "custom_row_values": []
+        }
+      ]
+    },
+    {
+      "name": "AfasFbOrderCompLines",
+      "hierarchy": "FbSalesQuotation -> FbSalesQuotationLines -> AfasFbOrderCompLines",
+      "connector_settings": {
+        "rows_function": "random_waarde",
+        "inherit": false,
+        "row_function_parameters": [
+          {
+            "name": "minimale_waarde",
+            "input": "1"
+          },
+          {
+            "name": "maximale_waarde",
+            "input": "3"
+          }
+        ]
+      },
+      "fields": [
+        {
+          "field_code": "QuHe",
+          "inherit": false,
+          "functions": [
+            {
+              "method_id": 14,
+              "order_id": 0,
+              "parameters": [
+                {
+                  "name": "get_connector",
+                  "input": "DemoData_Crediteuren"
+                },
+                {
+                  "name": "get_connector_field",
+                  "input": "Nummer_crediteur"
+                }
+              ]
+            }
+          ],
+          "custom_row_values": []
+        },
+        {
+          "field_code": "Ds",
+          "inherit": false,
+          "functions": [
+            {
+              "method_id": 14,
+              "order_id": 0,
+              "parameters": [
+                {
+                  "name": "get_connector",
+                  "input": "DemoData_Actieve_Forecasts"
+                },
+                {
+                  "name": "get_connector_field",
+                  "input": "Voortgang"
+                }
+              ]
+            }
+          ],
+          "custom_row_values": []
+        }
+      ]
+    }
+  ]
+}

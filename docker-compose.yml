@@ -1,0 +1,48 @@
+version: "3"
+
+services:
+  backend:
+    container_name: backend
+    image: afassoftware/rocket_backend
+    build: backend2.0
+    environment:
+      POSTGRES_HOST: database
+      POSTGRES_DB: rocket_db
+      POSTGRES_USER: user
+      POSTGRES_PASS: pass
+      POSTGRES_PORT: 5432
+    labels:
+      traefik.enable: "true"
+      traefik.http.routers.fastapi.rule: Host(`localhost`) && PathPrefix(`/api`)
+
+  database:
+    container_name: database
+    image: postgres:13.4-alpine
+    environment:
+      POSTGRES_DB: rocket_db
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: pass
+      POSTGRES_PORT: 5432
+    ports:
+      - "5432:5432"
+    volumes:
+      - database:/var/lib/postgresql/data/
+
+#  proxy:
+#    container_name: proxy
+#    image: afassoftware/rocket_proxy
+#    build: Proxy
+#    ports:
+#      - 80:80
+#      - 8080:8080
+#    volumes:
+#      - //var/run/docker.sock://var/run/docker.sock
+
+  adminer:
+    container_name: adminer
+    image: adminer:latest
+    ports:
+      - "5050:8080"
+
+volumes:
+  database: { }

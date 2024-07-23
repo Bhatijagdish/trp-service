@@ -1,0 +1,135 @@
+{
+  "inherits_process_id": null,
+  "process_settings": {
+    "send_method": "POST",
+    "inherit": false
+  },
+  "data_sources": [
+    {
+      "repeatable": true,
+      "inherit": null,
+      "custom_name": null,
+      "source": {
+        "type_source": "GetConnector",
+        "csv_file_id": null,
+        "get_connector": {
+          "name": "DemoData_Actieve_Medewerkers"
+        }
+      },
+      "filter_source": null,
+      "field_filter_rows": []
+    },
+    {
+      "repeatable": true,
+      "inherit": null,
+      "custom_name": null,
+      "source": {
+        "type_source": "GetConnector",
+        "csv_file_id": null,
+        "get_connector": {
+          "name": "DemoData_Actieve_Verkooprelaties"
+        }
+      },
+      "filter_source": null,
+      "field_filter_rows": []
+    }
+  ],
+  "connectors": [
+    {
+      "name": "CmForecast",
+      "hierarchy": "CmForecast",
+      "connector_settings": {
+        "rows_function": "random_waarde",
+        "inherit": false,
+        "row_function_parameters": [
+          {
+            "name": "minimale_waarde",
+            "input": "10"
+          },
+          {
+            "name": "maximale_waarde",
+            "input": "10"
+          }
+        ]
+      },
+      "fields": [
+        {
+          "field_code": "DaSt",
+          "inherit": false,
+          "functions": [
+            {
+              "method_id": 3,
+              "order_id": 0,
+              "parameters": [
+                {
+                  "name": "waarde",
+                  "input": "$datum"
+                }
+              ]
+            }
+          ],
+          "custom_row_values": []
+        },
+        {
+          "field_code": "DaEn",
+          "inherit": false,
+          "functions": [
+            {
+              "method_id": 3,
+              "order_id": 0,
+              "parameters": [
+                {
+                  "name": "waarde",
+                  "input": "$laatste_dag_volgende_maand"
+                }
+              ]
+            }
+          ],
+          "custom_row_values": []
+        },
+        {
+          "field_code": "EmId",
+          "inherit": false,
+          "functions": [
+            {
+              "method_id": 14,
+              "order_id": 0,
+              "parameters": [
+                {
+                  "name": "get_connector",
+                  "input": "DemoData_Actieve_Medewerkers"
+                },
+                {
+                  "name": "get_connector_field",
+                  "input": "Medewerker"
+                }
+              ]
+            }
+          ],
+          "custom_row_values": []
+        },
+        {
+          "field_code": "PrId",
+          "inherit": false,
+          "functions": [
+            {
+              "method_id": 14,
+              "order_id": 0,
+              "parameters": [
+                {
+                  "name": "get_connector",
+                  "input": "DemoData_Actieve_Verkooprelaties"
+                },
+                {
+                  "name": "get_connector_field",
+                  "input": "Nummer_debiteur"
+                }
+              ]
+            }
+          ],
+          "custom_row_values": []
+        }
+      ]
+    }
+  ]
+}

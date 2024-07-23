@@ -1,0 +1,287 @@
+{
+  "inherits_process_id": null,
+  "process_settings": {
+    "send_method": "POST",
+    "inherit": false
+  },
+  "data_sources": [
+    {
+      "repeatable": true,
+      "inherit": null,
+      "custom_name": null,
+      "source": {
+        "type_source": "GetConnector",
+        "csv_file_id": null,
+        "get_connector": {
+          "name": "DemoData_Actieve_Verkooprelaties"
+        }
+      },
+      "filter_source": null,
+      "field_filter_rows": []
+    }
+  ],
+  "connectors": [
+    {
+      "name": "FbSalesQuotation",
+      "hierarchy": "FbSalesQuotation",
+      "connector_settings": {
+        "rows_function": "random_waarde",
+        "inherit": false,
+        "row_function_parameters": [
+          {
+            "name": "minimale_waarde",
+            "input": "3"
+          },
+          {
+            "name": "maximale_waarde",
+            "input": "3"
+          }
+        ]
+      },
+      "fields": [
+        {
+          "field_code": "DbId",
+          "inherit": false,
+          "functions": [
+            {
+              "method_id": 14,
+              "order_id": 0,
+              "parameters": [
+                {
+                  "name": "get_connector",
+                  "input": "DemoData_Actieve_Verkooprelaties"
+                },
+                {
+                  "name": "get_connector_field",
+                  "input": "Nummer_debiteur"
+                }
+              ]
+            }
+          ],
+          "custom_row_values": [
+            {
+              "row": 0,
+              "input": "eerste DbId"
+            }
+          ]
+        },
+        {
+          "field_code": "OrDa",
+          "inherit": false,
+          "functions": [
+            {
+              "method_id": 3,
+              "order_id": 0,
+              "parameters": [
+                {
+                  "name": "waarde",
+                  "input": "$datum"
+                }
+              ]
+            }
+          ],
+          "custom_row_values": [
+            {
+              "row": 0,
+              "input": "OrDa"
+            }
+          ]
+        },
+        {
+          "field_code": "Unit",
+          "inherit": false,
+          "functions": [
+            {
+              "method_id": 3,
+              "order_id": 0,
+              "parameters": [
+                {
+                  "name": "waarde",
+                  "input": "1"
+                }
+              ]
+            }
+          ],
+          "custom_row_values": [
+            {
+              "row": 0,
+              "input": "UnIt"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "FbSalesQuotationLines",
+      "hierarchy": "FbSalesQuotation -> FbSalesQuotationLines",
+      "connector_settings": {
+        "rows_function": "random_waarde",
+        "inherit": false,
+        "row_function_parameters": [
+          {
+            "name": "minimale_waarde",
+            "input": "2"
+          },
+          {
+            "name": "maximale_waarde",
+            "input": "2"
+          }
+        ]
+      },
+      "fields": [
+        {
+          "field_code": "VaIt",
+          "inherit": false,
+          "functions": [
+            {
+              "method_id": 3,
+              "order_id": 0,
+              "parameters": [
+                {
+                  "name": "waarde",
+                  "input": "1"
+                }
+              ]
+            }
+          ],
+          "custom_row_values": [
+            {
+              "row": 0,
+              "input": "tweede VaIt"
+            }
+          ]
+        },
+        {
+          "field_code": "ItCd",
+          "inherit": false,
+          "functions": [
+            {
+              "method_id": 3,
+              "order_id": 0,
+              "parameters": [
+                {
+                  "name": "waarde",
+                  "input": "15112"
+                }
+              ]
+            }
+          ],
+          "custom_row_values": [
+            {
+              "row": 0,
+              "input": "ItCd"
+            }
+          ]
+        },
+        {
+          "field_code": "QuUn",
+          "inherit": false,
+          "functions": [
+            {
+              "method_id": 3,
+              "order_id": 0,
+              "parameters": [
+                {
+                  "name": "waarde",
+                  "input": "5"
+                }
+              ]
+            }
+          ],
+          "custom_row_values": [
+            {
+              "row": 0,
+              "input": "QuUn"
+            }
+          ]
+        },
+        {
+          "field_code": "Upri",
+          "inherit": false,
+          "functions": [
+            {
+              "method_id": 3,
+              "order_id": 0,
+              "parameters": [
+                {
+                  "name": "waarde",
+                  "input": "177.99"
+                }
+              ]
+            }
+          ],
+          "custom_row_values": [
+            {
+              "row": 0,
+              "input": "Upri"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "AfasFbOrderCompLines",
+      "hierarchy": "FbSalesQuotation -> FbSalesQuotationLines -> AfasFbOrderCompLines",
+      "connector_settings": {
+        "rows_function": "random_waarde",
+        "inherit": false,
+        "row_function_parameters": [
+          {
+            "name": "minimale_waarde",
+            "input": "1"
+          },
+          {
+            "name": "maximale_waarde",
+            "input": "1"
+          }
+        ]
+      },
+      "fields": [
+        {
+          "field_code": "ItCd",
+          "inherit": false,
+          "functions": [
+            {
+              "method_id": 3,
+              "order_id": 0,
+              "parameters": [
+                {
+                  "name": "waarde",
+                  "input": "4000"
+                }
+              ]
+            }
+          ],
+          "custom_row_values": [
+            {
+              "row": 0,
+              "input": "derde ItCd"
+            }
+          ]
+        },
+        {
+          "field_code": "VaIt",
+          "inherit": false,
+          "functions": [
+            {
+              "method_id": 3,
+              "order_id": 0,
+              "parameters": [
+                {
+                  "name": "waarde",
+                  "input": "2"
+                }
+              ]
+            }
+          ],
+          "custom_row_values": [
+            {
+              "row": 0,
+              "input": "VaIt"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,85 @@
+{
+  "rows": [
+    {
+      "CmForecast": {
+        "Element": {
+          "Fields": {
+            "DaSt": "2021-10-21",
+            "DaEn": "2021-11-30",
+            "EmId": "BASTIAANV",
+            "PrId": "10000"
+          },
+          "Objects": []
+        }
+      }
+    },
+    {
+      "CmForecast": {
+        "Element": {
+          "Fields": {
+            "DaSt": "2021-10-21",
+            "DaEn": "2021-11-30",
+            "EmId": "CAROLAZ",
+            "PrId": 10001
+          },
+          "Objects": []
+        }
+      }
+    },
+    {
+      "CmForecast": {
+        "Element": {
+          "Fields": {
+            "DaSt": "2021-10-21",
+            "DaEn": "2021-11-30",
+            "EmId": "CAROLAZ",
+            "PrId": 10001
+          },
+          "Objects": []
+        }
+      }
+    },
+    {
+      "CmForecast": {
+        "Element": {
+          "Fields": {
+            "DaSt": "2021-10-21",
+            "DaEn": "2021-11-30",
+            "EmId": "CAROLAZ",
+            "PrId": 10001
+          },
+          "Objects": []
+        }
+      }
+    },
+    {
+      "CmForecast": {
+        "Element": {
+          "Fields": {
+            "DaSt": "2021-10-21",
+            "DaEn": "2021-11-30",
+            "EmId": "CAROLAZ",
+            "PrId": 10001
+          },
+          "Objects": []
+        }
+      }
+    },
+    {
+      "CmForecast": {
+        "Element": {
+          "Fields": {
+            "DaSt": "2021-10-21",
+            "DaEn": "2021-11-30",
+            "EmId": "CAROLAZ",
+            "PrId": 10001
+          },
+          "Objects": []
+        }
+      }
+    }
+  ],
+  "group_sizes": 10,
+  "profit_time_seconds": 1.7,
+  "generation_time_milliseconds": 0.0
+}
